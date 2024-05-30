@@ -43,3 +43,7 @@ variable "storage_encrypted" {
 variable "iops" {
   default = 3000
 }
+
+variable "environment-new" {
+  default = "staging"
+}
