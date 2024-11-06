@@ -1,0 +1,20 @@
+name: Add KomisarMariia as Reviewer for Freezed Branches
+
+on:
+  pull_request:
+    types: [opened, reopened]
+    branches:
+      - "v*.*" # Matches branch names like v1.10, v2.5, etc.
+
+jobs:
+  add-reviewer:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Add KomisarMariia as reviewer
+        uses: actions-ecosystem/action-add-reviewer@v1
+        with:
+          reviewers: "KomisarMariia"
+          # Optionally, set `team-reviewers` if needed, for team-based reviews
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
