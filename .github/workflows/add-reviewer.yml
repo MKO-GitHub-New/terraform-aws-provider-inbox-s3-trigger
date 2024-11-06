@@ -9,7 +9,7 @@ jobs:
   add-reviewer:
     runs-on: ubuntu-latest
     steps:
-      - name: Add KomisarMariia as a reviewer
+      - name: Add KomissarMaria as a reviewer
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         run: |
@@ -19,4 +19,4 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: Bearer $GITHUB_TOKEN" \
             https://api.github.com/repos/$repo/pulls/$pr_number/requested_reviewers \
-            -d '{"reviewers":["KomisarMariia"]}'
+            -d '{"reviewers":["KomissarMaria"]}'
